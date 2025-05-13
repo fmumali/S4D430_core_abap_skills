@@ -19,7 +19,7 @@ CLASS zcl_5952_intro IMPLEMENTATION.
 
     DATA var TYPE /lrn/s4d430_ind_struct.
 
-    SELECT FROM /lrn/s4d430_ind FIELDS * INTO TABLE @DATA(result).
+    SELECT FROM /lrn/s4d430_ind FIELDS * INTO TABLE @DATA(lt_result).
 
      ENDMETHOD.
 
