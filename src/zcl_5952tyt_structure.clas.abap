@@ -18,22 +18,22 @@ CLASS zcl_5952tyt_structure DEFINITION
 
 * Task 2: Nested Structure
 **********************************************************************
-    TYPES:
-      BEGIN OF st_name,
-        first_name TYPE /dmo/first_name,
-        last_name  TYPE /dmo/last_name,
-      END OF st_name.
-
-    TYPES: BEGIN OF st_person,
-             name    TYPE st_name,
-             address TYPE st_address,
-           END OF st_person.
+*    TYPES:
+*      BEGIN OF st_name,
+*        first_name TYPE /dmo/first_name,
+*        last_name  TYPE /dmo/last_name,
+*      END OF st_name.
+*
+*    TYPES: BEGIN OF st_person,
+*             name    TYPE st_name,
+*             address TYPE st_address,
+*           END OF st_person.
 
 
 *Task 3: Named Includes
 **********************************************************************
     TYPES BEGIN OF st_person_inc.
-    INCLUDE TYPE st_name    AS name.
+    INCLUDE TYPE z5952s_name    AS name.
     INCLUDE TYPE st_address AS address.
     TYPES END OF st_person_inc.
 
@@ -50,8 +50,8 @@ CLASS ZCL_5952TYT_STRUCTURE IMPLEMENTATION.
 
 * Task 1
 **********************************************************************
-  "  DATA address TYPE st_address.
-  DATA address type z5952s_address.
+    "  DATA address TYPE st_address.
+    DATA address TYPE z5952s_address.
 
     address-street      = 'Dietmar-Hopp-Allee 16'.
     address-postal_code = '69190'.
@@ -60,7 +60,8 @@ CLASS ZCL_5952TYT_STRUCTURE IMPLEMENTATION.
 
 * Task 2
 **********************************************************************
-    DATA person TYPE st_person.
+    " DATA person TYPE st_person.
+    DATA person TYPE z5952s_person.
 
     person-name-first_name     = 'Dictionary'.
     person-name-last_name      = 'ABAP'.
