@@ -8,23 +8,23 @@ CLASS zcl_5952tyt_table_type DEFINITION
 
 * Task 1: Simple Table Type
 **********************************************************************
-    TYPES Z5952t_addresses TYPE SORTED TABLE OF /lrn/s_address
-                       WITH NON-UNIQUE KEY country city.
+*    TYPES Z5952t_addresses TYPE SORTED TABLE OF /lrn/s_address
+*                       WITH NON-UNIQUE KEY country city.
 
 * Task 2: Deep Structure
 **********************************************************************
-    TYPES:
-      BEGIN OF st_person_deep,
-        first_name TYPE /dmo/first_name,
-        last_name  TYPE /dmo/last_name,
-        addresses  TYPE Z5952t_addresses,
-      END OF st_person_deep.
+*    TYPES:
+*      BEGIN OF st_person_deep,
+*        first_name TYPE /dmo/first_name,
+*        last_name  TYPE /dmo/last_name,
+*        addresses  TYPE Z5952t_addresses,
+*      END OF st_person_deep.
 
 
 *Task 3: Nested Table Type
 **********************************************************************
-    TYPES tt_persons TYPE HASHED TABLE OF st_person_deep
-                     WITH UNIQUE KEY last_name first_name.
+*    TYPES tt_persons TYPE HASHED TABLE OF st_person_deep
+*                     WITH UNIQUE KEY last_name first_name.
 
 
 protected section.
@@ -68,7 +68,8 @@ CLASS ZCL_5952TYT_TABLE_TYPE IMPLEMENTATION.
 
 * Task 3
 **********************************************************************
-    DATA persons TYPE tt_persons.
+*    DATA persons TYPE tt_persons.
+       DATA persons TYPE z5952t_persons.
 
     persons =
        VALUE #(
