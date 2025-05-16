@@ -1,11 +1,16 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
+//@AbapCatalog: { dataMaintenance: #RESTRICTED }
+//@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AbapCatalog: {
+    dataMaintenance: #RESTRICTED,
+    viewEnhancementCategory: [#NONE]
+    }
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Employee (Entity)'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
-    serviceQuality: #X,
-    sizeCategory: #S,
-    dataClass: #MIXED
+    serviceQuality: #D,
+    sizeCategory: #M,
+    dataClass: #MASTER
 }
 define view entity Z5952_R_Employee
   as select from z5952employ
