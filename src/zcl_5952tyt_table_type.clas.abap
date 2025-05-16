@@ -59,7 +59,8 @@ CLASS ZCL_5952TYT_TABLE_TYPE IMPLEMENTATION.
 
 * Task 2
 **********************************************************************
-    DATA person TYPE st_person_deep.
+    "DATA person TYPE st_person_deep.
+    DATA person TYPE z5952s_person_deep.
 
     person-first_name = 'Dictionary'.
     person-last_name  = 'ABAP'.
