@@ -21,8 +21,10 @@ define view entity Z5952_R_Employee
       birth_date            as BirthDate,
       entry_date            as EntryDate,
       department_id         as DepartmentId,
-      //annual_salary as AnnualSalary,
-      //currency_code as CurrencyCode,
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      annual_salary         as AnnualSalary,
+      @EndUserText.label: 'Currency Key'
+      currency_code         as CurrencyCode,
       created_by            as CreatedBy,
       created_at            as CreatedAt,
       local_last_changed_by as LocalLastChangedBy,
