@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_5952_intro IMPLEMENTATION.
+CLASS ZCL_5952_INTRO IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
@@ -22,5 +22,4 @@ CLASS zcl_5952_intro IMPLEMENTATION.
     SELECT FROM /lrn/s4d430_ind FIELDS * INTO TABLE @DATA(lt_result).
 
      ENDMETHOD.
-
 ENDCLASS.
