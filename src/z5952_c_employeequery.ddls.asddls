@@ -17,6 +17,15 @@ define view entity Z5952_C_EMPLOYEEQUERY
       _Department.Description         as DepartmentDescription,
       _Department._Assistant.LastName as AssistantName,
 
+      @EndUserText.label: 'Employee Role'
+      case EmployeeId
+       when _Department.DepartmentHead
+       then 'H'
+       when _Department.DepartmentAssistant
+       then 'A'
+       else ' '
+       end                            as EmployeeRole,
+
       /*Association*/
       _Department
 
