@@ -14,8 +14,8 @@ define view entity Z5952_C_EMPLOYEEQUERY
       FirstName,
       LastName,
       DepartmentId,
-      _Department.Description         as DepartmentDescription,
-      _Department._Assistant.LastName as AssistantName,
+      _Department.Description                 as DepartmentDescription,
+      _Department._Assistant.LastName         as AssistantName,
 
       @EndUserText.label: 'Employee Role'
       case EmployeeId
@@ -24,7 +24,11 @@ define view entity Z5952_C_EMPLOYEEQUERY
        when _Department.DepartmentAssistant
        then 'A'
        else ' '
-       end                            as EmployeeRole,
+       end                                    as EmployeeRole,
+      @EndUserText.label: 'Monthly Salary'
+      cast( AnnualSalary as abap.fltp) / 12.0 as MonthlySalary,
+
+      CurrencyCode,
 
       /*Association*/
       _Department
