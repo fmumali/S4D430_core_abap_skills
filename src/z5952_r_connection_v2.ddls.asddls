@@ -14,11 +14,11 @@ define view entity Z5952_R_CONNECTION_v2
   key AirlineID,
   key ConnectionID,
 
-      _Airline._Currency._Text.CurrencyName
+      //      _Airline._Currency._Text.CurrencyName
 
-      //_Airline._Currency._Text[ Language = 'E' ].CurrencyName
+      //      _Airline._Currency._Text[ Language = 'E' ].CurrencyName
 
-      //_Airline._Currency._Text[ 1: language = 'E' ].CurrencyName
+      _Airline._Currency._Text[ 1: Language = 'E' ].CurrencyName
 }
 where
       AirlineID    = 'AA'
