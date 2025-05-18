@@ -1,0 +1,23 @@
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Employee (Querry)'
+@Metadata.ignorePropagatedAnnotations: true
+@ObjectModel.usageType:{
+    serviceQuality: #X,
+    sizeCategory: #S,
+    dataClass: #MIXED
+}
+define view entity Z5952_C_EMPLOYEEQUERY
+  as select from Z5952_R_Employee
+{
+  key EmployeeId,
+      FirstName,
+      LastName,
+      DepartmentId,
+      _Department.Description         as DepartmentDescription,
+      _Department._Assistant.LastName as AssistantName,
+
+      /*Association*/
+      _Department
+
+}
