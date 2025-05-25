@@ -15,7 +15,10 @@ define view entity Z5952_C_EMPLOYEEQUERY
       LastName,
       DepartmentId,
       _Department.Description                 as DepartmentDescription,
-      _Department._Assistant.LastName         as AssistantName,
+      //      _Department._Assistant.LastName         as AssistantName,
+      concat_with_space( _Department._Assistant.FirstName,
+                         _Department._Assistant.LastName,
+                         1 )                  as AssistantName,
 
       @EndUserText.label: 'Employee Role'
       case EmployeeId
