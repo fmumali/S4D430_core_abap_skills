@@ -47,7 +47,7 @@ define view entity Z5952_C_EMPLOYEEQUERY
       division( dats_days_between( EntryDate,
                           $session.system_date ),
                           365,
-                          1)                                        as CompanyAfflition,
+                          1)                                        as CompanyAffiliation,
 
       /*Association*/
       _Department
