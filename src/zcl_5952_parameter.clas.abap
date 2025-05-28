@@ -20,8 +20,9 @@ CLASS ZCL_5952_PARAMETER IMPLEMENTATION.
     SELECT
 *    FROM /LRN/C_Employee_Ann
       FROM z5952_c_employeequeryp(
-       p_target_curr = 'JPY',
-       p_date = @sy-datum )
+       p_target_curr = 'JPY'
+*      ,p_date = @sy-datum
+       )
     FIELDS employeeid,
            firstname,
            lastname,
