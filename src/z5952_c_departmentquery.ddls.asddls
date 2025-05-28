@@ -8,16 +8,21 @@
     dataClass: #MIXED
 }
 define view entity Z5952_C_DepartmentQuery
-  as select from Z5952_C_EMPLOYEEQUERY
+  with parameters
+    p_target_curr : /dmo/currency_code,
+    @EndUserText.label: 'Date of evaluation'
+    @Environment.systemField: #SYSTEM_DATE
+    P_DATE        : abap.dats
+  as select from Z5952_C_EMPLOYEEQUERYP( p_target_curr: $parameters.p_target_curr, p_date: $parameters.P_DATE )
 {
   DepartmentId,
   DepartmentDescription,
   avg( CompanyAffiliation as abap.dec(11,1) ) as AverageAffiliation,
-  @Semantics.amount.currencyCode: 'CurrencyCodeUSD'
+  @Semantics.amount.currencyCode: 'CurrencyCode'
   sum( AnnualSalaryConverted )                as TotalSalary,
-  CurrencyCodeUSD
+  CurrencyCode
 }
 group by
   DepartmentId,
   DepartmentDescription,
-  CurrencyCodeUSD
+  CurrencyCode
