@@ -13,10 +13,11 @@ extensibility.elementSuffix: 'ZEM'
     sizeCategory: #S,
     dataClass: #MIXED
 }
+@Metadata.allowExtensions: true
 define view entity Z5952_C_EMPLOYEEQUERYP
   with parameters
     p_target_curr : /dmo/currency_code,
-    @EndUserText.label: 'Date of evaluation'
+
     @Environment: {
         systemField: #SYSTEM_DATE
     }
@@ -33,7 +34,7 @@ define view entity Z5952_C_EMPLOYEEQUERYP
                          _Department._Assistant.LastName,
                          1 )    as AssistantName,
 
-      @EndUserText.label: 'Employee Role'
+
       case EmployeeId
        when _Department.DepartmentHead
        then 'H'
@@ -42,7 +43,7 @@ define view entity Z5952_C_EMPLOYEEQUERYP
        else ' '
        end                      as EmployeeRole,
 
-      @EndUserText.label: 'Annual Salary'
+
       @Semantics.amount.currencyCode: 'CurrencyCode'
       currency_conversion( amount            => AnnualSalary,
                            source_currency   => CurrencyCode,
@@ -50,7 +51,7 @@ define view entity Z5952_C_EMPLOYEEQUERYP
                            exchange_rate_date => $parameters.p_date
                            )    as AnnualSalaryConverted,
 
-      @EndUserText.label: 'Monthly Salary'
+
       @Semantics.amount.currencyCode: 'CurrencyCode'
       cast( $projection.AnnualSalaryConverted as abap.fltp
       )
