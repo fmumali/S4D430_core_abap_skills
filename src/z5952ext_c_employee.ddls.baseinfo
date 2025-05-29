@@ -8,13 +8,9 @@
 "Z5952_R_EMPLOYEE"
 ],
 "ASSOCIATED":
-[
-"Z5952_R_DEPARTMENT"
-],
+[],
 "BASE":
-[
-"Z5952_R_EMPLOYEE"
-],
+[],
 "ANNO_REF":
 [],
 "SCALAR_FUNCTION":
